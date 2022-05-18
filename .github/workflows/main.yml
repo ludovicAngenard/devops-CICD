@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  - Explore-GitHub-Actions:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -14,11 +14,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Unit Test
         run: npm ci && npm test
-  - sonarcloud:
-    name: Test de qualité
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+
+      - uses: actions/checkout@v4
         with:
       # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
