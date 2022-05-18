@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  - Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -14,7 +14,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Unit Test
         run: npm ci && npm test
-   sonarcloud:
+  - sonarcloud:
     name: Test de qualité
     runs-on: ubuntu-latest
     steps:
